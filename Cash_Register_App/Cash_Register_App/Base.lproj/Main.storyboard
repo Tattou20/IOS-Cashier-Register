@@ -139,10 +139,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTT-ye-xOs">
-                                <rect key="frame" x="290" y="239" width="75" height="140"/>
+                                <rect key="frame" x="290" y="274" width="75" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Buy" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="buyProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dJa-wy-G9d"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bq8-7S-XmL">
                                 <rect key="frame" x="143" y="487" width="151" height="21"/>
@@ -158,8 +161,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arF-j3-HEt">
+                                <rect key="frame" x="282" y="191" width="75" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Price" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="calculTotalPrice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MLU-Fj-Y3h"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLi-pd-FIk">
-                                <rect key="frame" x="300" y="162" width="37" height="21"/>
+                                <rect key="frame" x="290" y="162" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -173,6 +186,7 @@
                         <outlet property="displayDigit" destination="Bq8-7S-XmL" id="VlF-ay-5el"/>
                         <outlet property="selectProductLabel" destination="QZ9-vh-JEG" id="YCP-Ri-2Y1"/>
                         <outlet property="tableView" destination="pSg-0r-Xch" id="qo4-ef-kwe"/>
+                        <outlet property="totalPrice" destination="CLi-pd-FIk" id="wKX-VL-lW3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
