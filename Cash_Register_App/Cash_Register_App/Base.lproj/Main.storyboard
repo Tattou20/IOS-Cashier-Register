@@ -144,7 +144,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Buy" cornerStyle="large"/>
                                 <connections>
-                                    <action selector="buyProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dJa-wy-G9d"/>
+                                    <action selector="buyProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EjF-fs-jCW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bq8-7S-XmL">
@@ -178,6 +178,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxP-0X-Zs6">
+                                <rect key="frame" x="295" y="394" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Clear" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="clearQuantity:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qvn-dn-6zd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
