@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         "Dresses"
     ]
     
-    let quantity = [
+    var quantity = [
         23,
         52,
         10,
@@ -148,14 +148,63 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buyProduct(_ sender: Any) {
-        print("Product sold!")
-    }
+           guard let selectedProduct = selectProductLabel.text else {
+               print("Please select a product before buying.")
+               return
+           }
+
+           guard let inputValue = Double(displayDigit.text ?? "") else {
+               print("Invalid input value.")
+               return
+           }
+
+           guard let selectedIndex = names.firstIndex(of: selectedProduct) else {
+               print("Selected product not found.")
+               return
+           }
+
+           if inputValue > Double(quantity[selectedIndex]) {
+               showAlert(message: "Not enough \(selectedProduct) in stock!")
+           } else {
+               quantity[selectedIndex] -= Int(inputValue)
+
+               resetUI()
+
+               tableView.reloadData()
+
+               if selectedProduct == "Hats" {
+                   quantity[2] = 0
+               }
+
+               showAlert(message: "\(inputValue) \(selectedProduct) purchased successfully!")
+           }
+       }
+    
+    func resetUI() {
+            // Reset the user interface logic here
+            // This could involve clearing input fields, updating labels, etc.
+            displayDigit.text = "0"
+            selectProductLabel.text = "Select a Product"
+            totalPrice.text = "Total"
+        }
+    
+    func showAlert(message: String) {
+            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    
+    
+    @IBAction func clearQuantity(_ sender: Any) {
+        displayDigit.text = "0"    }
     
 }
 
+    
+
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectProduct = names[indexPath.row]
+	        let selectProduct = names[indexPath.row]
         selectProductLabel.text = selectProduct
     }
 }
@@ -178,3 +227,4 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
 }
+    
